@@ -1,0 +1,184 @@
+:root {
+  /* Modern Color Palette */
+  --primary-bg: #2c3e50;          /* Dark Blue-Gray */
+  --secondary-bg: #34495e;        /* Lighter Blue-Gray */
+  --accent-color: #3498db;        /* Bright Blue */
+  --number-btn-bg: #ecf0f1;       /* Light Gray */
+  --number-btn-text: #2c3e50;     /* Dark Blue-Gray */
+  --operator-btn: #e67e22;        /* Orange */
+  --clear-btn: #e74c3c;          /* Red */
+  --function-btn: #9b59b6;       /* Purple */
+  --display-bg: #f8f9fa;         /* Off White */
+  --display-text: #2c3e50;       /* Dark Blue-Gray */
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container */
+.calculator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  padding: 20px;
+}
+
+
+
+/* Calculator */
+.calculator {
+  width: 400px;
+  background: white;
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Display */
+.calculator-display {
+  background: #f8f9fa;
+  padding: 25px;
+  font-size: 2.5rem;
+  text-align: right;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  min-height: 90px;
+  word-break: break-all;
+  position: relative;
+}
+
+.calculator-formula {
+  font-size: 1rem;
+  color: #888;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .calculator-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Calculator Keypad */
+.calculator-keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+/* Calculator Buttons (keep your existing button styles) */
+.calculator-button {
+  padding: 20px;
+  font-size: 1.5rem;
+  border-radius: 12px;
+  border: none;
+  background: #4CAF50; /* Green background */
+  color: white; /* White text */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.calculator-button:hover {
+  background: #45a049; /* Darker green on hover */
+  transform: translateY(-2px);
+}
+
+.calculator-button.operator {
+  background: #f39c12; /* Orange background for operators */
+}
+
+.calculator-button.operator:hover {
+  background: #e67e22; /* Darker orange on hover */
+}
+
+.calculator-button.equal {
+  background: #e74c3c; /* Red background for equal button */
+}
+
+.calculator-button.equal:hover {
+  background: #c0392b; /* Darker red on hover */
+}
+
+/* Number Buttons */
+.calculator-button:not(.key-operator):not(.key-clear):not(.key-function):hover {
+  background: #dfe6e9;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Operator Buttons */
+.key-operator {
+  background: var(--operator-btn);
+  color: white;
+  font-weight: bold;
+}
+
+.key-operator:hover {
+  background: #d35400;
+  transform: translateY(-2px);
+}
+
+/* Clear Button */
+.key-clear {
+  background: var(--clear-btn);
+  color: white;
+  grid-column: span 2;
+}
+
+.key-clear:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Function Buttons */
+.key-function {
+  background: var(--function-btn);
+  color: white;
+}
+
+.key-function:hover {
+  background: #8e44ad;
+  transform: translateY(-2px);
+}
+
+
+
+/* Active State for Buttons */
+.calculator-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .calculator {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+  }
+
+  .calculator-button {
+    padding: 15px;
+    font-size: 1.3rem;
+  }
+}
+  
